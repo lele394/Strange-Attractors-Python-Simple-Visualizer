@@ -2,7 +2,8 @@
 feel free to message me to add new attractors
 
 available mode : default : put your own 3D attractor here
-                 Clifford
+                 Clifford 
+                 
 
 
 """
@@ -12,8 +13,10 @@ available mode : default : put your own 3D attractor here
 
 
 startingPosition = [1, 1] #starting point position
-iterations = 10000 #number of points to compute
+iterations = 1000000 #number of points to compute
 mode = "Clifford" #mode
+
+_MARKERWIDTH = 0.02 #if lower than one, will be transparent, can be used to trace "occupation maps"
 
 
 
@@ -75,6 +78,6 @@ for i in range(iterations):
     Y.append(sy)
 
 
-axe.plot(X, Y, marker=".", linewidth=0)
+axe.plot(X, Y, marker=".", linewidth=0, markersize=_MARKERWIDTH)
 
 plt.show()
