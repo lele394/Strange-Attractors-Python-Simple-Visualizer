@@ -32,4 +32,8 @@ y = sin(beta * px) + delta * cos(beta * py)
 x = cos(c0 * px)**2 - sin(c1 * py)**2
 y = 2*cos(c2 * px) * sin(c3 * py)
 
+#### Henon
+x = 1 + py - a * px**2
+y = b * px
+
 list of current 3D attractors and their equations

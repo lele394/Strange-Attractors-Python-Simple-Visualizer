@@ -4,6 +4,7 @@ feel free to message me to add new attractors
 available mode : default : put your own 3D attractor here
                  Clifford 
                  Juan
+                 Henon
 
 
 """
@@ -14,7 +15,7 @@ available mode : default : put your own 3D attractor here
 
 startingPosition = [0.1, 0.1] #starting point position
 iterations = 1000000 #number of points to compute
-mode = "Juan" #mode
+mode = "Henon" #mode
 
 _MARKERWIDTH = 0.02 #if lower than one, will be transparent, can be used to trace "occupation maps"
 
@@ -66,6 +67,15 @@ def NextStep(pos, mode="default"):
 
         return x, y
         
+
+    elif mode == "Henon":
+        a = 1.4
+        b = 0.3
+
+        x = 1 + py - a * px**2
+        y = b * px
+
+        return x, y
     
 
 
