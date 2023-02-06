@@ -13,23 +13,23 @@ list of current 3D attractors and their equations
 
 x = sigma * (py - px) * dt <br>
 y = px * (rho - pz) - py * dt <br>
-z = px*py - beta * pz * dt <br>
+z = px * py - beta * pz * dt <br>
 
 #### Bouali
 
-x = px*(a-py) + alpha * pz * dt <br>
-y = -py*(b-px*px) * dt <br>
-z = -px*(c-s*pz) - beta*pz * dt <br>
+x = px * (a-py) + alpha * pz * dt <br>
+y = -py * (b-px * px) * dt <br>
+z = -px * (c-s * pz) - beta * pz * dt <br>
 
 #### Arneodo
 x = py * dt <br>
 y = pz * dt <br>
-z = a*px -  b*py - pz - c*px*px*px * dt <br>
+z = a * px -  b * py - pz - c * px * px * px * dt <br>
 
 #### Den Tsucs
-x = a * (py - px) + d * px *pz * dt <br>
-y = f * py - px*pz * dt <br>
-z = c*pz + px*py - e * px *px * dt <br>
+x = a * (py - px) + d * px * pz * dt <br>
+y = f * py - px * pz * dt <br>
+z = c * pz + px * py - e * px * px * dt <br>
 <br><br><br>
 
 ## 2D Attractors
