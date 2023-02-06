@@ -3,6 +3,8 @@
 
 A simple python based visualizer for attractors using Matplotlib's pyplot library.
 
+*might make something out of [that](http://paulbourke.net/fractals/sprott/) one day, looks dope ngl*
+
 Heavily inspired from [Paul Bourke's website](http://paulbourke.net/fractals/)
 
 ## 3D Attractors
