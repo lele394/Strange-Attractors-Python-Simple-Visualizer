@@ -83,6 +83,7 @@ sx, sy, sz = startingPosition[0], startingPosition[1], startingPosition[2]
 
 for i in range(iterations):
 
+    if(i%100000 == 0): print(i, "   ", i/iterations*100, "%")
 
     dt = 0.05
 
@@ -96,7 +97,7 @@ for i in range(iterations):
     Y.append(sy)
     Z.append(sz)
 
-
+print("rendering")
 axe.plot(X, Y, Z, marker="", linewidth=0.7)
 
 plt.show()
