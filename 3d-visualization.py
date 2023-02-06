@@ -2,6 +2,7 @@
 
 available mode : Lorenz : Edward Lorenz's famous butterfly attractor
                  Bouali : http://chaos-3d.e-monsite.com/medias/files/nody2.pdf
+                 Arneodo : requires some adjustement with dt and iterations
 
 
 nb : parameter rho, beta, and sigma of Lorenz attractor can be modified in NextStep function
@@ -11,10 +12,10 @@ nb : parameter rho, beta, and sigma of Lorenz attractor can be modified in NextS
 
 
 
-startingPosition = [1, 10, 1] #starting point position
-iterations = 10000 #number of points to compute
-mode = "Bouali" #mode
-
+startingPosition = [0.1, 0.1, 0.1] #starting point position
+iterations = 1000000 #number of points to compute
+mode = "Arneodo" #mode
+_LINEWIDTH = 0.1 #lower than 1 makes it transparent
 
 
 
@@ -32,7 +33,10 @@ axe = plt.figure().add_subplot(projection='3d')
 
 def NextStep(pos, mode="default"):
     
-    
+    px = pos[0]
+    py = pos[1]
+    pz = pos[2]
+        
     
     
     
@@ -44,10 +48,6 @@ def NextStep(pos, mode="default"):
         c = 1.5
         beta = 0.05
         s = 1
-
-        px = pos[0]
-        py = pos[1]
-        pz = pos[2]
         
         x = px*(a-py) + alpha * pz
         y = -py*(b-px*px)
@@ -59,16 +59,22 @@ def NextStep(pos, mode="default"):
         sigma = 10
         beta = 8/3
 
-        px = pos[0]
-        py = pos[1]
-        pz = pos[2]
-        
         x = sigma * (py - px)
         y = px * (rho - pz) - py
         z = px*py - beta * pz
 
         return x, y, z
 
+    elif mode == "Arneodo":
+        a = 5.5
+        b = 3.5
+        c = 0.01
+
+        x = py
+        y = pz
+        z = a*px -  b*py - pz - c*px*px*px
+
+        return x, y, z
 
 
 
@@ -85,7 +91,7 @@ for i in range(iterations):
 
     if(i%100000 == 0): print(i, "   ", i/iterations*100, "%")
 
-    dt = 0.05
+    dt = 0.001
 
     ax, ay, az = NextStep([sx, sy, sz], mode)
     
@@ -98,6 +104,6 @@ for i in range(iterations):
     Z.append(sz)
 
 print("rendering")
-axe.plot(X, Y, Z, marker="", linewidth=0.7)
+axe.plot(X, Y, Z, marker="", linewidth=_LINEWIDTH)
 
 plt.show()

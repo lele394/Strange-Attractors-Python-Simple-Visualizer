@@ -19,6 +19,11 @@ x = px*(a-py) + alpha * pz
 y = -py*(b-px*px)
 z = -px*(c-s*pz) - beta*pz
 
+#### Arneodo
+x = py
+y = pz
+z = a*px -  b*py - pz - c*px*px*px
+
 <br><br><br>
 
 ## 2D Attractors
