@@ -3,6 +3,7 @@
 available mode : Lorenz : Edward Lorenz's famous butterfly attractor
                  Bouali : http://chaos-3d.e-monsite.com/medias/files/nody2.pdf
                  Arneodo : requires some adjustement with dt and iterations
+                 Den Tsucs 
 
 
 nb : parameter rho, beta, and sigma of Lorenz attractor can be modified in NextStep function
@@ -14,8 +15,8 @@ nb : parameter rho, beta, and sigma of Lorenz attractor can be modified in NextS
 
 startingPosition = [0.1, 0.1, 0.1] #starting point position
 iterations = 1000000 #number of points to compute
-mode = "Arneodo" #mode
-_LINEWIDTH = 0.1 #lower than 1 makes it transparent
+mode = "Den Tsucs" #mode
+_LINEWIDTH = 0.01 #lower than 1 makes it transparent
 
 
 
@@ -75,6 +76,28 @@ def NextStep(pos, mode="default"):
         z = a*px -  b*py - pz - c*px*px*px
 
         return x, y, z
+
+    elif mode == "Den Tsucs":
+        a = 40
+        c = 0.833
+        d = 0.5
+        e = 0.65
+        f = 20
+
+        x = a * (py - px) + d * px *pz
+        y = f * py - px*pz
+        z = c*pz + px*py - e * px *px
+
+        return x, y, z
+
+
+
+
+
+
+
+
+
 
 
 

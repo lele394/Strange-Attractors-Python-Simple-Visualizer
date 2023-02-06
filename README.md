@@ -41,4 +41,9 @@ y = 2*cos(c2 * px) * sin(c3 * py)
 x = 1 + py - a * px**2
 y = b * px
 
+#### Den Tsucs
+x = a * (py - px) + d * px *pz
+y = f * py - px*pz
+z = c*pz + px*py - e * px *px
+
 list of current 3D attractors and their equations
