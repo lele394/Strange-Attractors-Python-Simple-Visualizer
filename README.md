@@ -33,7 +33,7 @@ z = c * pz + px * py - e * px * px * dt <br>
 <br><br><br>
 
 ## 2D Attractors
-
+list of current 2D attractors and their equations
 #### Clifford
 x = sin(alpha * py) + gamma * cos(alpha * px) <br>
 y = sin(beta * px) + delta * cos(beta * py) <br>
@@ -48,4 +48,4 @@ x = 1 + py - a * px**2 <br>
 y = b * px <br>
 
 
-list of current 3D attractors and their equations
+
