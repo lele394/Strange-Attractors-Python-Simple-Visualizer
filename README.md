@@ -17,35 +17,35 @@ z = px*py - beta * pz * dt <br>
 
 #### Bouali
 
-x = px*(a-py) + alpha * pz
-y = -py*(b-px*px)
-z = -px*(c-s*pz) - beta*pz
+x = px*(a-py) + alpha * pz * dt <br>
+y = -py*(b-px*px) * dt <br>
+z = -px*(c-s*pz) - beta*pz * dt <br>
 
 #### Arneodo
-x = py
-y = pz
-z = a*px -  b*py - pz - c*px*px*px
+x = py * dt <br>
+y = pz * dt <br>
+z = a*px -  b*py - pz - c*px*px*px * dt <br>
 
+#### Den Tsucs
+x = a * (py - px) + d * px *pz * dt <br>
+y = f * py - px*pz * dt <br>
+z = c*pz + px*py - e * px *px * dt <br>
 <br><br><br>
 
 ## 2D Attractors
 
 #### Clifford
-x = sin(alpha * py) + gamma * cos(alpha * px)
-y = sin(beta * px) + delta * cos(beta * py)
+x = sin(alpha * py) + gamma * cos(alpha * px) <br>
+y = sin(beta * px) + delta * cos(beta * py) <br>
 
 
 #### Juan
-x = cos(c0 * px)**2 - sin(c1 * py)**2
-y = 2*cos(c2 * px) * sin(c3 * py)
+x = cos(c0 * px)**2 - sin(c1 * py)**2 <br>
+y = 2*cos(c2 * px) * sin(c3 * py) <br>
 
 #### Henon
-x = 1 + py - a * px**2
-y = b * px
+x = 1 + py - a * px**2 <br>
+y = b * px <br>
 
-#### Den Tsucs
-x = a * (py - px) + d * px *pz
-y = f * py - px*pz
-z = c*pz + px*py - e * px *px
 
 list of current 3D attractors and their equations
