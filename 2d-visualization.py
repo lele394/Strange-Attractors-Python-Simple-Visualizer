@@ -3,7 +3,7 @@ feel free to message me to add new attractors
 
 available mode : default : put your own 3D attractor here
                  Clifford 
-                 
+
 
 
 """
@@ -13,7 +13,7 @@ available mode : default : put your own 3D attractor here
 
 
 startingPosition = [1, 1] #starting point position
-iterations = 1000000 #number of points to compute
+iterations = 10000000 #number of points to compute
 mode = "Clifford" #mode
 
 _MARKERWIDTH = 0.02 #if lower than one, will be transparent, can be used to trace "occupation maps"
@@ -70,6 +70,8 @@ sx, sy = startingPosition[0], startingPosition[1]
 for i in range(iterations):
 
 
+    if(i%100000 == 0): print(i, "   ", i/iterations*100, "%")
+
     sx, sy = NextStep([sx, sy], mode)
     
 
@@ -77,7 +79,7 @@ for i in range(iterations):
     X.append(sx)
     Y.append(sy)
 
-
+print("rendering")
 axe.plot(X, Y, marker=".", linewidth=0, markersize=_MARKERWIDTH)
 
 plt.show()
