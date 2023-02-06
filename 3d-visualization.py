@@ -1,7 +1,7 @@
 """
 
 available mode : Lorenz : Edward Lorenz's famous butterfly attractor
-                 default : put your own 3D attractor here
+                 Bouali : http://chaos-3d.e-monsite.com/medias/files/nody2.pdf
 
 
 nb : parameter rho, beta, and sigma of Lorenz attractor can be modified in NextStep function
@@ -13,7 +13,7 @@ nb : parameter rho, beta, and sigma of Lorenz attractor can be modified in NextS
 
 startingPosition = [1, 10, 1] #starting point position
 iterations = 10000 #number of points to compute
-mode = "Lorenz" #mode
+mode = "Bouali" #mode
 
 
 
@@ -31,10 +31,27 @@ axe = plt.figure().add_subplot(projection='3d')
 
 
 def NextStep(pos, mode="default"):
-    if mode == "default":
-        x = 0
-        y = 0
-        z = 0
+    
+    
+    
+    
+    
+    
+    if mode == "Bouali":
+        a = 4
+        alpha = 0.3
+        b = 1
+        c = 1.5
+        beta = 0.05
+        s = 1
+
+        px = pos[0]
+        py = pos[1]
+        pz = pos[2]
+        
+        x = px*(a-py) + alpha * pz
+        y = -py*(b-px*px)
+        z = -px*(c-s*pz) - beta*pz
         return x, y, z
     
     elif mode == "Lorenz":
@@ -67,7 +84,7 @@ sx, sy, sz = startingPosition[0], startingPosition[1], startingPosition[2]
 for i in range(iterations):
 
 
-    dt = 0.005
+    dt = 0.05
 
     ax, ay, az = NextStep([sx, sy, sz], mode)
     
