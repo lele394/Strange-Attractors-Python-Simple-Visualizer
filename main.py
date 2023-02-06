@@ -1,20 +1,19 @@
 """
 
-available mode : Lorentz
+available mode : Lorenz : Edward Lorenz's famous butterfly attractor
+                 default : put your own 3D attractor here
 
 
-
-
-
+nb : parameter rho, beta, and sigma of Lorenz attractor can be modified in NextStep function
 """
 
 
 
 
 
-startingPosition = [1, 10, 1]
-iterations = 10000
-mode = "Lorentz"
+startingPosition = [1, 10, 1] #starting point position
+iterations = 10000 #number of points to compute
+mode = "Lorenz" #mode
 
 
 
@@ -38,7 +37,7 @@ def NextStep(pos, mode="default"):
         z = 0
         return x, y, z
     
-    elif mode == "Lorentz":
+    elif mode == "Lorenz":
         rho = 28
         sigma = 10
         beta = 8/3
