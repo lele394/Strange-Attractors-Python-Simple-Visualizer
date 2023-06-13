@@ -19,6 +19,10 @@ mode = "Den Tsucs" #mode
 _LINEWIDTH = 0.01 #lower than 1 makes it transparent
 
 
+print(f'***** Current Settings ***** \n Starting Position =   {startingPosition}  \n Iterations = {iterations}  \n Mode = {mode} \n Settings can be updated directly in the file')
+
+
+
 
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import axes3d
