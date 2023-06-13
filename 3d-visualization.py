@@ -15,7 +15,7 @@ nb : parameter rho, beta, and sigma of Lorenz attractor can be modified in NextS
 
 startingPosition = [0.1, 0.1, 0.1] #starting point position
 iterations = 1000000 #number of points to compute
-mode = "Den Tsucs" #mode
+mode = "Den Tsucs" #mode : available : "default"  "Bouali"  "Lorenz"  "Arneodo"  "Den Tsucs"
 _LINEWIDTH = 0.01 #lower than 1 makes it transparent
 
 
