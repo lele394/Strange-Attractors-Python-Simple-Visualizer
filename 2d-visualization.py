@@ -14,11 +14,14 @@ available mode : default : put your own 3D attractor here
 
 
 startingPosition = [0.1, 0.1] #starting point position
-iterations = 1000000 #number of points to compute
-mode = "Henon" #mode
+iterations = 1_000_000 #number of points to compute
+mode = "Juan" #mode : available : "default"  "Clifford"  "Juan"  "Henon"
 
 _MARKERWIDTH = 0.02 #if lower than one, will be transparent, can be used to trace "occupation maps"
 
+
+
+print(f'***** Current Settings ***** \n Starting Position =   {startingPosition}  \n Iterations = {iterations}  \n Mode = {mode} \n Settings can be updated directly in the file')
 
 
 
