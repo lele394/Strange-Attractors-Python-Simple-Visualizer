@@ -19,6 +19,9 @@ mode = "Juan" #mode : available : "default"  "Clifford"  "Juan"  "Henon"
 
 _MARKERWIDTH = 0.02 #if lower than one, will be transparent, can be used to trace "occupation maps"
 
+_DISPLAY_EVOLUTION = True #If set to True, will plot X, Y, and Z on a plot at the end
+start_display = 0
+end_display = 250
 
 
 print(f'***** Current Settings ***** \n Starting Position =   {startingPosition}  \n Iterations = {iterations}  \n Mode = {mode} \n Settings can be updated directly in the file')
@@ -110,3 +113,11 @@ print("rendering")
 axe.plot(X, Y, marker=".", linewidth=0, markersize=_MARKERWIDTH)
 
 plt.show()
+
+
+if _DISPLAY_EVOLUTION:
+    plt.plot(X[start_display:end_display], label="X")
+    plt.plot(Y[start_display:end_display], label="Y")
+    plt.title("Evolutions")
+    plt.legend()
+    plt.show()
