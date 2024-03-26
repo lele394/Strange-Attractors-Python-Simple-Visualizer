@@ -15,9 +15,11 @@ nb : parameter rho, beta, and sigma of Lorenz attractor can be modified in NextS
 
 startingPosition = [0.1, 0.1, 0.1] #starting point position
 iterations = 1000000 #number of points to compute
-mode = "Den Tsucs" #mode : available : "default"  "Bouali"  "Lorenz"  "Arneodo"  "Den Tsucs"
-_LINEWIDTH = 0.01 #lower than 1 makes it transparent
-
+mode = "Lorenz" #mode : available : "default"  "Bouali"  "Lorenz"  "Arneodo"  "Den Tsucs"
+_LINEWIDTH = 0.05 #lower than 1 makes it transparent
+_DISPLAY_EVOLUTION = True #If set to True, will plot X, Y, and Z on a plot at the end
+start_display = 0
+end_display = 50000
 
 print(f'***** Current Settings ***** \n Starting Position =   {startingPosition}  \n Iterations = {iterations}  \n Mode = {mode} \n Settings can be updated directly in the file')
 
@@ -132,5 +134,13 @@ for i in range(iterations):
 
 print("rendering")
 axe.plot(X, Y, Z, marker="", linewidth=_LINEWIDTH)
-
 plt.show()
+
+
+if _DISPLAY_EVOLUTION:
+    plt.plot(X[start_display:end_display], label="X")
+    plt.plot(Y[start_display:end_display], label="Y")
+    plt.plot(Z[start_display:end_display], label="Z")
+    plt.title("Evolutions")
+    plt.legend()
+    plt.show()
